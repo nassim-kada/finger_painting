@@ -3,7 +3,6 @@ import mediapipe as mp
 import time
 import math
 import numpy as np
-
 class handDetector:
     def __init__(self, mode=False, maxHands=2, detectionCon=0.5, trackCon=0.5):
         self.mode = mode
@@ -19,7 +18,6 @@ class handDetector:
         )
         self.mpDraw = mp.solutions.drawing_utils
         self.tipIds = [4, 8, 12, 16, 20] 
-
     def findHands(self, img, draw=True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.hands.process(imgRGB)
